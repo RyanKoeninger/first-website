@@ -1,0 +1,166 @@
+/* -------     BASIC STYLES      ------- */
+
+h1 {
+    color: red;
+}
+
+p  {
+    color: green;
+}
+
+li {
+    list-style-type: none;
+}
+body {
+    background-color: white;
+}
+
+
+
+
+/*------- TAGS -------  */
+
+/* just a . applies to all elements with that tag */
+.special  {
+    color: orange;
+    font-weight: bold;
+}
+
+/* now it only applies to elements with special tag that are also a li */
+li.special {
+    color: pink;
+}
+
+
+
+/* ------- SELECTORS AND COMBINATORS ------- */
+
+/* only applies to <em> elements within a <li> */
+li em  {
+    color: rebeccapurple;
+}
+/* plus means look at all <p> that show up immediately after <h1> */
+h1 + p  {
+    font-size: 200%;
+}
+/* looks at any special elements that appear in a <p> that comes directly after 
+an <h1> 
+the body part seems superfluous here because all text is gonna be in the body?
+moral of the story is the only thing we did in the html was define the special thing */
+body h1 + p .special  {
+    color: yellow;
+    background-color: black;
+    padding: 5px;
+}
+/* can use commas to combine these if the style applies to separate elements */
+
+
+/* ------- LINK STYLING ------- */
+
+/* link as it appears when page loads */
+a:link  {
+    color:pink;
+}
+/* link as it appears after youve clicked it */
+a:visited  {
+    color: green;
+}
+/* link as it appears when you hover your mouse over it */
+a:hover  {
+    text-decoration: none;
+}
+/* link attributes no matter whats going on with it */
+a  {
+    font-weight: bold;
+}
+
+/* ------- FUNCTIONS ------- */
+
+.outer  {
+    border: 5px solid black;
+}
+.box  {
+    padding: 10px; /* set number of pixels around text */
+    width: calc(90% - 30px);
+    background-color: rebeccapurple;
+    color: white;
+}
+.rotatedBox  {
+    margin: 40px;  /* margin is after rotation, so increasing margin also moves it down and to the right */
+    width: 100px;
+    height: 100px;
+    background-color: rebeccapurple;
+    transform: rotate(0.8turn)
+}
+
+@media (min-width: 35em){
+    body{
+        background-color: white;
+    }
+}
+
+
+.outline  {
+    padding: 8px;
+    width: 40%;
+    border: 2px solid black;
+    background-color: lightcyan;
+}
+.bibTitle   {
+    font-size: 150%
+}
+.jobTitle  {
+    font-size: 125%
+}
+.outline p  {
+    color: orange
+}
+.contactInfo  {
+    font-size: 125%
+}
+.outline li  {
+    color: pink
+}
+.outline li a  {
+    color: purple
+}
+
+
+
+
+/* -------   TAKEAWAYS   ------- 
+
+- there are a few ways of applying css: 
+    - internal stylesheets are inside of an html document, contained within a <style> element:
+    - inline styles affect just a single element, like what we did with the table at the bottom of 
+        index1.html
+        - bad, don't do (most of the time)
+    - external stylesheets, like this one, are generally the way to go; only need a single 
+        line at the beginning of any html document to be applied
+
+- errors are simply ignored instead of not letting the page load, for example
+
+*/
+
+/* -------   STRUCTURE   ------- 
+
+- selectors: tell browser which elements to apply rules to
+    
+- cascade and specificity: order of operations
+    - cascade rule: if 2 rules affect the same element, the last rule will be used
+    - specifity rule: if 2 rules affect the same element but 1 is more specifit it will be applied
+
+- properties and values:
+    - properties: identifiers, like font-size
+    - values: assigned to properties
+
+- declaration: forms when properties and values are together
+
+- declaration block: all the declarations for a certain elment, paired with selectors
+*/
+
+/* -------   @RULES   -------
+- @import: imports another stylesheet
+- @media: creates media query, so looks at how page is viewed?
+
+*/
